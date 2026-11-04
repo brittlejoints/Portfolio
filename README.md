@@ -1,12 +1,11 @@
 # Maria Sweeney portfolio site
 
-Plain HTML, CSS and JavaScript with no framework and no build step. This is
-the production version of the Claude Design prototypes in `../project/`.
+Plain HTML, CSS and JavaScript with no framework and no build step, built
+from Maria's Claude Design prototypes.
 
 ## Run it locally
 
 ```sh
-cd site
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
@@ -17,8 +16,9 @@ happens, the page skips the loader and still works.
 
 ## Deploy
 
-Upload the `site/` folder as-is to any static host: GitHub Pages, Netlify
-(drag and drop the folder) or Cloudflare Pages. No settings are needed.
+Serve this folder as-is from any static host. For GitHub Pages: Settings →
+Pages → Deploy from a branch → `main`, `/ (root)`. Netlify (drag and drop the
+folder) and Cloudflare Pages work too, with no settings needed.
 
 ## How it's organised
 
