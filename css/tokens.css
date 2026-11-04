@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Maria Design System: tokens
+   Copied from the Maria Design System bundle (colors, typography, shape,
+   spacing, elevation). These are the raw values every page builds on.
+   Change a colour here and it changes everywhere.
+   ========================================================================== */
+
+:root {
+  /* --- Warm core ------------------------------------------------------- */
+  --mimosa: #F7B557;   /* amber — primary warm accent */
+  --mimosa-600: #E39B32;
+  --mimosa-100: #FCE6BE;
+  --orange: #E27921;   /* mid orange */
+  --aperol: #C1521E;   /* burnt rust — signature accent */
+  --aperol-700: #9E4116;
+  --aperol-100: #F0CDB9;
+
+  /* --- Botanical greens: full ramp — sage is a genuine second voice, --- */
+  /* not just a highlight, so it needs the same range as the rust accent. */
+  --sage-100: #E3E9DD;
+  --sage-200: #C6D0BE;
+  --sage-300: #ADBCA1;
+  --sage-400: #9AAC8C;
+  --sage: #8A9E7F;     /* soft muted sage — base */
+  --sage-600: #71876D;
+  --sage-700: #597050;
+  --sage-800: #405536;
+  --sage-900: #283420;
+  --forest: #143621;   /* deep botanical green */
+  --forest-800: #0E2417;
+
+  /* --- Cool support (periwinkle / blue-grey) -------------------------- */
+  --violet: #C9C7EC;   /* soft periwinkle from brand board */
+  --cloud: #CDD0DB;    /* pale lavender-grey */
+  --azul: #9197AA;     /* muted blue-grey */
+
+  /* --- Neutrals (warm) ------------------------------------------------- */
+  --cream: #F5EFE6;    /* primary page background */
+  --cream-deep: #EDE4D5;
+  --paper: #FBF8F2;    /* raised surface, lighter than cream */
+  --sand: #E7DDCC;     /* subtle divider / muted surface */
+  --stone: #B9AE9C;    /* muted text on dark, hairlines */
+  --espresso: #2A2320; /* primary text — near-black warm brown */
+  --espresso-700: #4A3F39;
+  --espresso-500: #6E6157;
+
+  /* --- Fixed ----------------------------------------------------------- */
+  --white: #FFFFFF;
+  --black: #171310;
+
+  /* ====================================================================
+     Semantic aliases — reference these in components, not raw palette.
+     ==================================================================== */
+
+  /* Text */
+  --text-strong: var(--espresso);
+  --text-body: var(--espresso-700);
+  --text-muted: var(--espresso-500);
+  --text-on-accent: var(--cream);
+  --text-on-dark: var(--cream);
+  --text-link: var(--aperol);
+  --text-link-hover: var(--aperol-700);
+
+  /* Surfaces */
+  --surface-page: var(--cream);
+  --surface-card: var(--paper);
+  --surface-muted: var(--sand);
+  --surface-inverse: var(--espresso);
+  --surface-inverse-soft: var(--forest);
+
+  /* Brand accents (semantic) */
+  --brand-primary: var(--aperol);      /* signature rust */
+  --brand-secondary: var(--mimosa);    /* amber */
+  --brand-tertiary: var(--sage);       /* botanical */
+  --brand-cool: var(--azul);
+
+  /* --- Two-voice accent ramps -------------------------------------------
+     accent-1 (rust) leads; accent-2 (sage) is a genuine second voice —
+     use it for real UI moments (badges, secondary actions, tags), not just
+     a highlight dot. Same shape, different hue. */
+  --color-accent-1-100: var(--aperol-100);
+  --color-accent-1-500: var(--aperol);
+  --color-accent-1-700: var(--aperol-700);
+
+  --color-accent-2-100: var(--sage-100);
+  --color-accent-2-300: var(--sage-300);
+  --color-accent-2-500: var(--sage);
+  --color-accent-2-700: var(--sage-700);
+  --color-accent-2-900: var(--sage-900);
+
+  --surface-accent-2: var(--sage-100);
+  --accent-2-container: var(--sage-200);
+  --on-accent-2-container: var(--forest-800);
+  --on-accent-2: var(--forest-800);
+
+  /* Material-style tonal containers (brand-skinned) */
+  --primary: var(--aperol);
+  --on-primary: var(--cream);
+  --primary-container: var(--aperol-100);
+  --on-primary-container: var(--aperol-700);
+
+  --secondary: var(--mimosa-600);
+  --on-secondary: var(--espresso);
+  --secondary-container: var(--mimosa-100);
+  --on-secondary-container: #6B4A12;
+
+  --tertiary: var(--sage);
+  --on-tertiary: var(--forest-800);
+  --tertiary-container: var(--sage-200);
+  --on-tertiary-container: var(--forest-800);
+
+  /* Lines & borders */
+  --border-hairline: color-mix(in oklch, var(--espresso) 14%, transparent);
+  --border-strong: color-mix(in oklch, var(--espresso) 30%, transparent);
+  --outline: color-mix(in oklch, var(--espresso) 24%, transparent);
+
+  /* States */
+  --state-hover: color-mix(in oklch, var(--espresso) 6%, transparent);
+  --state-press: color-mix(in oklch, var(--espresso) 12%, transparent);
+  --focus-ring: var(--aperol);
+
+  /* Semantic status */
+  --success: #4B7B4A;
+  --warning: var(--mimosa-600);
+  --danger: var(--aperol);
+  --info: var(--azul);
+}
+
+:root {
+  /* --- Families -------------------------------------------------------- */
+  --font-script: "mina", "Lobster", "Brush Script MT", cursive;  /* wordmark only — Typekit "mina", Lobster as fallback while the kit loads */
+  --font-display: "Poppins", "Helvetica Neue", sans-serif;       /* display voice — geometric sans */
+  --font-groovy: var(--font-display);                            /* deprecated alias, kept for older markup */
+  --font-brand: "Space Grotesk", "Helvetica Neue", sans-serif;   /* brand mark, labels, buttons, headings */
+  --font-serif: var(--font-brand);                               /* deprecated alias — editorial serif role retired, folded into brand */
+  --font-heading: var(--font-brand);                             /* h2–h4 role */
+  --font-sans: "Public Sans", "Helvetica Neue", Arial, sans-serif; /* UI / body */
+  --font-mono: ui-monospace, "SF Mono", "Menlo", monospace; /* system stack — no dedicated webfont */
+
+  /* --- Fluid type scale (editorial rhythm) ---------------------------- */
+  --text-xs: 0.75rem;    /* 12 */
+  --text-sm: 0.875rem;   /* 14 */
+  --text-base: 1rem;     /* 16 */
+  --text-md: 1.125rem;   /* 18 */
+  --text-lg: 1.375rem;   /* 22 */
+  --text-xl: 1.75rem;    /* 28 */
+  --text-2xl: 2.25rem;   /* 36 */
+  --text-3xl: clamp(2.5rem, 4vw, 3.5rem);
+  --text-4xl: clamp(3.25rem, 6vw, 5rem);
+  --text-display: clamp(4rem, 9vw, 8rem);
+
+  /* --- Weights -------------------------------------------------------- */
+  --fw-light: 300;    /* @kind font */
+  --fw-regular: 400;  /* @kind font */
+  --fw-medium: 500;   /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700;     /* @kind font */
+
+  /* --- Line heights --------------------------------------------------- */
+  --lh-tight: 1.05;   /* @kind font */
+  --lh-snug: 1.2;     /* @kind font */
+  --lh-normal: 1.5;   /* @kind font */
+  --lh-relaxed: 1.65; /* @kind font */
+
+  /* --- Letter spacing ------------------------------------------------- */
+  --ls-tight: -0.02em; /* @kind font */
+  --ls-normal: 0;      /* @kind font */
+  --ls-wide: 0.04em;   /* @kind font */
+  --ls-label: 0.12em;  /* @kind font */
+
+  /* ---- Semantic roles ------------------------------------------------ */
+  --type-eyebrow-font: var(--font-brand);
+  --type-eyebrow-size: var(--text-xs);
+  --type-eyebrow-spacing: var(--ls-label);
+
+  --type-display-font: var(--font-display);
+  --type-heading-font: var(--font-heading);
+  --type-brand-font: var(--font-brand);
+  --type-body-font: var(--font-sans);
+}
+
+:root {
+  /* --- Material 3 corner scale --------------------------------------- */
+  --shape-none: 0px;
+  --shape-xs: 4px;
+  --shape-sm: 8px;
+  --shape-md: 12px;
+  --shape-lg: 16px;
+  --shape-xl: 28px;
+  --shape-2xl: 40px;   /* expressive / hero surfaces */
+  --shape-full: 999px; /* pills, FABs, chips */
+
+  /* --- Semantic component radii (over-rounded, brand-tuned) ----------- */
+  /* Maria over-rounds: containers take the generous --radius-lg step;
+     buttons AND inputs are full pills. No sharp corners anywhere. */
+  --radius-lg: 24px;                    /* default container radius */
+  --radius-button: var(--shape-full);   /* pill */
+  --radius-chip: var(--shape-full);     /* pill */
+  --radius-card: var(--radius-lg);      /* generous, organic cards */
+  --radius-card-sm: var(--shape-lg);
+  --radius-field: var(--shape-full);    /* inputs are pills, not M3-default small-top-radius */
+  --radius-field-outlined: var(--shape-full);
+  --radius-dialog: var(--shape-2xl);
+  --radius-fab: var(--shape-lg);
+  --radius-sheet: var(--shape-2xl);
+
+  /* --- Borders -------------------------------------------------------- */
+  --border-width: 1px;
+  --border-width-strong: 1.5px;
+  --border-width-focus: 2px;
+}
+
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Semantic */
+  --gap-inline: var(--space-2);
+  --gap-stack: var(--space-4);
+  --pad-card: var(--space-6);
+  --pad-section: var(--space-9);
+  --container-max: 1200px;
+  --container-narrow: 720px;
+  --content-measure: 68ch;
+}
+
+:root {
+  /* --- Elevation (warm-tinted, diffuse) ------------------------------ */
+  --shadow-0: none;
+  --shadow-1: 0 1px 2px color-mix(in oklch, var(--espresso) 8%, transparent),
+              0 1px 3px color-mix(in oklch, var(--espresso) 6%, transparent);
+  --shadow-2: 0 2px 6px color-mix(in oklch, var(--espresso) 9%, transparent),
+              0 4px 12px color-mix(in oklch, var(--espresso) 7%, transparent);
+  --shadow-3: 0 6px 16px color-mix(in oklch, var(--espresso) 12%, transparent),
+              0 12px 28px color-mix(in oklch, var(--espresso) 9%, transparent);
+  --shadow-4: 0 12px 32px color-mix(in oklch, var(--espresso) 16%, transparent),
+              0 24px 48px color-mix(in oklch, var(--espresso) 10%, transparent);
+
+  /* --- Motion --------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);        /* @kind other */
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1.15);   /* @kind other */
+  --ease-decelerate: cubic-bezier(0, 0, 0, 1);        /* @kind other */
+  --dur-fast: 120ms;                                  /* @kind other */
+  --dur-base: 200ms;                                  /* @kind other */
+  --dur-slow: 360ms;                                  /* @kind other */
+
+  /* --- Focus ring ----------------------------------------------------- */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}
+
+:root { --shader-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0 0.06 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");  }

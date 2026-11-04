@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maria Sweeney · Accessible product designer</title>
+  <meta name="description" content="Maria Sweeney is an accessible product designer and the author-illustrator of Brittle Joints, a 2025 Eisner Award nominee.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='%23F5EFE6'/%3E%3Ctext x='100' y='136' font-family='serif' font-size='120' fill='%23C1521E' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+  <!-- Apply the saved light/dark theme before anything paints, so there is no flash -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js'); // lets CSS hide scroll-reveal items only when JS can show them
+      var t = null;
+      try { t = localStorage.getItem('pf-theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-pf-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <!-- Typekit kit from the design system: the handwritten polaroid captions -->
+  <link rel="stylesheet" href="https://use.typekit.net/hum0qvq.css">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+
+  <link rel="preload" as="image" href="assets/img/maria-script.png">
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+</head>
+<body>
+<div id="pf">
+  <a class="skip-link" href="#pf-main">Skip to content</a>
+
+  <!-- Loading screen: the wordmark writes itself in ink -->
+  <div id="pf-loader" aria-hidden="true">
+    <div class="loader-mark" role="img" aria-label="Maria">
+      <canvas id="pf-ink" width="1890" height="188" aria-hidden="true"></canvas>
+      <!-- Invisible pen path: the order the letters are "written" in -->
+      <svg id="pf-pen" viewBox="0 0 945 94" aria-hidden="true">
+        <path id="pf-pen-word" fill="none" d="M7,40 C40,34 70,22 92,11 C101,8 104,10 102,17 C96,34 82,52 72,65 C88,52 118,34 137,25 C145,36 150,48 151,57 C162,43 180,31 195,27 C200,42 201,60 201,72 C232,71 262,62 285,53 C293,36 303,17 316,8 C330,11 337,22 337,34 C335,50 322,64 305,66 C292,66 286,55 291,45 C298,37 318,34 332,40 C337,50 338,64 340,75 C375,72 415,52 452,31 C466,21 474,13 481,13 C480,28 468,52 454,73 C470,60 496,34 512,15 C517,26 519,40 521,50 C535,60 555,62 575,60 C600,55 620,45 636,37 C643,30 649,25 653,27 C656,45 656,66 660,79 C690,84 725,83 757,76 C770,62 785,40 800,28 C810,28 817,33 818,42 C818,56 812,68 800,72 C788,74 784,64 786,52 C790,41 810,34 827,40 C831,52 829,64 827,74 C852,84 890,80 938,55"></path>
+        <path id="pf-pen-dot" fill="none" d="M665,14 C669,10 675,9 679,12"></path>
+      </svg>
+    </div>
+    <div class="loader-caption">Design that sees everyone</div>
+  </div>
+
+  <!-- ===================== Navigation ===================== -->
+  <header id="pf-nav" class="is-over-hero">
+    <a class="nav-home" href="#pf-hero" aria-label="Maria, home"><img id="pf-nav-mark" src="assets/img/maria-script.png" alt="Maria" width="150" height="15"></a>
+    <nav class="nav-primary" aria-label="Primary">
+      <span id="pf-nav-ind" aria-hidden="true"></span>
+      <a class="nav-link" href="#pf-work" data-nav-link="pf-work">Work</a>
+      <a class="nav-link" href="books.html">Books</a>
+      <a class="nav-link" href="#pf-services" data-nav-link="pf-services">Services</a>
+      <a class="nav-link" href="#pf-experience" data-nav-link="pf-experience">Experience</a>
+      <a class="nav-link" href="#pf-about" data-nav-link="pf-about">About</a>
+      <a class="nav-link" href="assets/docs/MariaSweeney-Resume-2026.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in new tab)">Résumé</a>
+      <button type="button" class="nav-icon-btn" id="pf-theme-btn" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g class="icon-sun">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"></path>
+          </g>
+          <path class="icon-moon" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="#pf-contact">Say hello</a>
+      <button type="button" class="nav-icon-btn nav-menu-btn" id="pf-menu-btn" aria-expanded="false" aria-controls="pf-mobile-menu" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path class="bar-top" d="M4 7h16"></path>
+          <path class="bar-bottom" d="M4 17h16"></path>
+        </svg>
+      </button>
+    </nav>
+    <nav id="pf-mobile-menu" aria-label="Mobile" aria-hidden="true">
+      <a href="#pf-work">Work</a>
+      <a href="books.html">Books</a>
+      <a href="#pf-services">Services</a>
+      <a href="#pf-experience">Experience</a>
+      <a href="#pf-about">About</a>
+      <a href="assets/docs/MariaSweeney-Resume-2026.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in new tab)">Résumé</a>
+      <a class="menu-cta press" href="#pf-contact">Say hello</a>
+    </nav>
+  </header>
+
+  <main id="pf-main" tabindex="-1">
+
+    <!-- ===================== Hero ===================== -->
+    <!-- The section grows to 320vh once the video loads; scrolling scrubs the clip -->
+    <section id="pf-hero">
+      <div id="pf-hero-stage">
+        <video id="pf-hero-video" data-src="assets/video/hero-wildflowers.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+        <div class="hero-scrim" aria-hidden="true"></div>
+
+        <div id="pf-hero-copy">
+          <h1 class="hero-title">Hi! I'm <span>Maria</span>,</h1>
+          <div class="hero-role"><span>Accessible product designer</span></div>
+          <p class="hero-lede">…and tiny dogs lover who believes exceptional design happens when creativity meets inclusivity.</p>
+          <div class="hero-actions">
+            <a class="btn-fill hero-btn" href="#pf-work">View my work</a>
+            <a class="btn-fill hero-btn hero-btn--hello press" href="#pf-contact">Say hello</a>
+          </div>
+          <p class="hero-note">Author-illustrator of <em>Brittle Joints</em>, a 2025 Eisner Award nominee and a New York Public Library Top 10 Graphic Novel. Now designing accessible products, tested with the people who rely on them.</p>
+        </div>
+
+        <div class="hero-fade" aria-hidden="true"></div>
+        <div id="pf-scroll-cue" aria-hidden="true">
+          <span>Scroll</span>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Selected work ===================== -->
+    <section id="pf-work" class="section">
+      <div class="wrap">
+        <div class="kicker" data-reveal>Selected work</div>
+        <h2 class="section-title work-title" data-reveal>Projects I'm proud of</h2>
+        <div class="work-stack">
+          <a class="work-card" href="tap-talk.html">
+            <div class="work-art"><div class="work-art-fill" style="--art-bg: var(--mimosa); --leaf: var(--forest);">
+              <svg aria-hidden="true" viewBox="0 0 100 100"><path d="M50 78 C30 60 30 30 50 12 C70 30 70 60 50 78 Z"></path></svg>
+            </div></div>
+            <div class="work-copy">
+              <h3>Tap Talk: AAC communication app</h3>
+              <p>A free app that speaks for people who lost their voice suddenly or can't talk right now. Built from 320+ reviews of 12 AAC apps, it opens straight to talking and works offline.</p>
+              <div class="work-more">Read the case study<span aria-hidden="true">→</span></div>
+            </div>
+          </a>
+          <a class="work-card" href="disability-check.html">
+            <div class="work-art"><div class="work-art-fill" style="--art-bg: var(--forest); --leaf: var(--mimosa);">
+              <svg aria-hidden="true" viewBox="0 0 100 100"><path d="M50 78 C30 60 30 30 50 12 C70 30 70 60 50 78 Z"></path></svg>
+            </div></div>
+            <div class="work-copy">
+              <h3>Disability Check: Trying work on SSDI</h3>
+              <p>A plain-language guide that shows people on SSDI what happens to their check and their healthcare if they start working.</p>
+              <div class="work-more">Read the case study<span aria-hidden="true">→</span></div>
+            </div>
+          </a>
+          <a class="work-card" href="books.html">
+            <div class="work-art"><div class="work-art-fill" style="--art-bg: var(--aperol); --leaf: var(--mimosa);">
+              <svg aria-hidden="true" viewBox="0 0 100 100"><path d="M50 78 C30 60 30 30 50 12 C70 30 70 60 50 78 Z"></path></svg>
+            </div></div>
+            <div class="work-copy">
+              <h3>Books &amp; Illustration</h3>
+              <p>A graphic memoir, two picture books, and painterly illustration work, including <em>Brittle Joints</em>, a 2025 Eisner Award nominee.</p>
+              <div class="work-more">See the books<span aria-hidden="true">→</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== What I do (tabs) ===================== -->
+    <section id="pf-services" class="section section--roomy">
+      <div class="wrap services">
+        <h2 class="section-title">What I do</h2>
+        <div>
+          <div class="tabs" role="tablist" aria-label="Services">
+            <button type="button" role="tab" class="tab press" id="pf-tab-0" data-accent="0" aria-controls="pf-panel-0" aria-selected="true" tabindex="0">Product design</button>
+            <button type="button" role="tab" class="tab press" id="pf-tab-1" data-accent="1" aria-controls="pf-panel-1" aria-selected="false" tabindex="-1">Design systems</button>
+            <button type="button" role="tab" class="tab press" id="pf-tab-2" data-accent="2" aria-controls="pf-panel-2" aria-selected="false" tabindex="-1">Illustration</button>
+            <button type="button" role="tab" class="tab press" id="pf-tab-3" data-accent="3" aria-controls="pf-panel-3" aria-selected="false" tabindex="-1">Audits &amp; remediation</button>
+          </div>
+          <div class="tab-card">
+            <div class="tab-panel" role="tabpanel" id="pf-panel-0" aria-labelledby="pf-tab-0" tabindex="0">
+              <h3>Accessible product design</h3>
+              <p>WCAG-grounded UX, from the first sketch to a shipped, tested flow. Accessibility is designed in, never bolted on.</p>
+              <div class="chips"><span>Research &amp; audits</span><span>Wireflows</span><span>Prototyping</span></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="pf-panel-1" aria-labelledby="pf-tab-1" tabindex="0" hidden>
+              <h3>Design systems &amp; front-end</h3>
+              <p>Component libraries an engineer and a designer both trust: tokens, accessible primitives, and docs that keep teams honest.</p>
+              <div class="chips"><span>Design tokens</span><span>Components</span><span>Documentation</span></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="pf-panel-2" aria-labelledby="pf-tab-2" tabindex="0" hidden>
+              <h3>Illustration</h3>
+              <p>Picture books, a graphic memoir, and editorial art. Painterly work that puts disabled people at the center of the story.</p>
+              <div class="chips"><span>Picture books</span><span>Graphic memoir</span><span>Editorial art</span></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" id="pf-panel-3" aria-labelledby="pf-tab-3" tabindex="0" hidden>
+              <h3>Accessibility audits &amp; remediation</h3>
+              <p>WCAG 2.2 reviews of live products, with fixes your team can ship, not a PDF of problems left on your desk.</p>
+              <div class="chips"><span>WCAG 2.2 audits</span><span>Assistive tech testing</span><span>Remediation plans</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section id="pf-experience" class="section section--roomy section--raised faded">
+      <div class="wrap">
+        <div class="exp-head" data-reveal>
+          <h2 class="section-title">Experience</h2>
+          <a class="btn-fill btn-small press" href="assets/docs/MariaSweeney-Resume-2026.pdf" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 11 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            Download résumé
+          </a>
+        </div>
+        <ul class="exp-list" data-reveal>
+          <li><div><div class="exp-role">Accessibility Program Lead &amp; Visual Designer</div><div class="exp-org">Tamman Inc. · Philadelphia, PA</div></div><div class="exp-date">Oct 2024 – May 2025</div></li>
+          <li><div><div class="exp-role">Freelance Graphic Designer &amp; Web Developer</div><div class="exp-org">Maria Sweeney Art · Oakland, CA</div></div><div class="exp-date">May 2013 – Present</div></li>
+          <li><div><div class="exp-role">Social Media Manager</div><div class="exp-org">Richard Solomon Artists · New York, NY</div></div><div class="exp-date">May 2014 – Sep 2015</div></li>
+          <li><div><div class="exp-role">Certified Professional in Accessibility Core Competencies</div><div class="exp-org">IAAP</div></div><div class="exp-date">2025</div></li>
+          <li><div><div class="exp-role">BFA, Illustration &amp; Graphic Design</div><div class="exp-org">Moore College of Art &amp; Design</div></div><div class="exp-date">2012 – 2016</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section id="pf-about" class="section section--roomy faded">
+      <div class="wrap">
+        <div class="kicker kicker--muted" data-reveal>About me</div>
+        <h2 class="section-title about-title" data-reveal>Somewhere between a sketchbook and a screen reader, that's where I work.</h2>
+        <div id="pf-about-window" data-reveal>
+          <p class="about-p about-p--a">I was adopted from Moldova and raised in the Pine Barrens on the East Coast. I spent a decade in comics, publishing, and graphic design, and somewhere in there started noticing how many people get shut out of the things we make.</p>
+          <div class="about-photo-col">
+            <div id="pf-about-photo-well">
+              <img src="assets/img/portrait-maria.jpg" alt="Maria smiling down at Bambi, her small blind rescue dog, held in her lap at an outdoor café." width="345" height="480" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <p class="about-p about-p--b">My graphic memoir <em>Brittle Joints</em> got two Eisner nominations and a Ringo nomination. You can probably find it at your local indie bookstore or library. If not, request it!</p>
+          <p class="about-p about-p--a">These days I design accessible apps, design systems, and interfaces that work for everyone, especially the people most often left out. A decade of drawing stories turns out to be pretty useful for that.</p>
+          <p class="about-p about-p--b2">Out of the office, you can find me on a hike through the redwoods with my love and our blind rescue dog Bambi, making a wildflower arrangement on the way.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Envelope of polaroids ===================== -->
+    <section id="pf-personal" class="section section--roomy section--raised faded">
+      <div class="wrap personal">
+        <h2 class="section-title personal-title" data-reveal>A few things that aren't on the résumé.</h2>
+
+        <div id="pf-line-stage">
+          <div id="pf-env-rise">
+            <!-- Five polaroids tucked in the envelope. JS fans them out and lets you drag them. -->
+            <div class="polaroid" data-card="watercolor" aria-hidden="true">
+              <figure>
+                <div class="polaroid-photo"><img src="assets/img/polaroids/watercolour.jpg" alt="An open sketchbook of watercolour studies: fruit, a jar and a basket of flowers." loading="lazy" decoding="async" draggable="false"></div>
+                <figcaption>Watercolours on weekends</figcaption>
+              </figure>
+            </div>
+            <div class="polaroid" data-card="comics" aria-hidden="true">
+              <figure>
+                <div class="polaroid-photo"><img src="assets/img/polaroids/comics.jpg" alt="A painted comic page from Brittle Joints." loading="lazy" decoding="async" draggable="false"></div>
+                <figcaption>Ten years in comics before pixels</figcaption>
+              </figure>
+            </div>
+            <div class="polaroid" data-card="moldova" aria-hidden="true">
+              <figure>
+                <div class="polaroid-photo"><img src="assets/img/polaroids/moldova.jpg" alt="A comic page with a hand-drawn map of Moldova." loading="lazy" decoding="async" draggable="false"></div>
+                <figcaption>Born in Moldova</figcaption>
+              </figure>
+            </div>
+            <div class="polaroid" data-card="coffee" aria-hidden="true">
+              <figure>
+                <div class="polaroid-photo"><img src="assets/img/polaroids/desk.jpg" alt="A desk in afternoon light with a botanical painting, glasses and a tin of pressed flowers." loading="lazy" decoding="async" draggable="false"></div>
+                <figcaption>Iced americanos, always</figcaption>
+              </figure>
+            </div>
+            <div class="polaroid" data-card="bay" aria-hidden="true">
+              <figure>
+                <div class="polaroid-photo"><img src="assets/img/polaroids/bay.jpg" alt="Looking out over the green hills and rooftops of the East Bay." loading="lazy" decoding="async" draggable="false"></div>
+                <figcaption>Lives in the Bay Area</figcaption>
+              </figure>
+            </div>
+
+            <div class="envelope-col">
+              <div class="envelope">
+                <div class="env-back" aria-hidden="true"></div>
+                <div class="env-pocket">
+                  <svg class="flourish flourish--bl" aria-hidden="true" viewBox="0 0 60 60"><use href="#flourish"></use></svg>
+                  <svg class="flourish flourish--br" aria-hidden="true" viewBox="0 0 60 60"><use href="#flourish"></use></svg>
+                </div>
+                <div class="env-flap" aria-hidden="true">
+                  <div class="env-flap-paper"></div>
+                  <svg class="flourish flourish--tl" aria-hidden="true" viewBox="0 0 60 60"><use href="#flourish"></use></svg>
+                  <svg class="flourish flourish--tr" aria-hidden="true" viewBox="0 0 60 60"><use href="#flourish"></use></svg>
+                </div>
+                <!-- Pointer-only affordance; keyboard users get the caption button below -->
+                <button type="button" class="env-seal" tabindex="-1" aria-hidden="true">
+                  <img src="assets/img/wax-seal.png" alt="" draggable="false">
+                </button>
+              </div>
+              <button type="button" class="env-caption" aria-label="Pull the seal to open the envelope">pull the seal ↓</button>
+            </div>
+          </div>
+        </div>
+        <span class="sr-only" role="status" id="pf-env-status"></span>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section id="pf-contact">
+      <h2 class="contact-title">Let's make something<br>worth noticing.</h2>
+      <p class="contact-lede">I'm taking on new projects. Got one that needs thoughtful design and a touch of creativity? I'd love to hear about it.</p>
+      <div class="contact-actions">
+        <a class="btn-ink press" href="mailto:mariasweeneyart@gmail.com">Get in touch</a>
+        <button type="button" class="btn-outline press" id="pf-copy-email">
+          <span class="copy-icons">
+            <svg class="icon-copy" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span class="copy-label">mariasweeneyart@gmail.com</span>
+        </button>
+        <span class="sr-only" role="status" id="pf-copy-status"></span>
+      </div>
+
+      <!-- Hidden drawing, revealed by the banker's lamp -->
+      <div id="pf-lamp-stage" aria-hidden="true">
+        <div class="lamp-glow"></div>
+        <div class="lamp-art"><img src="assets/img/lamp-drawing.jpg" alt="" loading="lazy" decoding="async"></div>
+      </div>
+      <button id="pf-lamp-btn" class="press-soft" type="button" aria-pressed="false" aria-label="Turn on the banker's lamp" title="Banker's lamp">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.4 13.8 6l6.2 3.1L9.2 14.5z"></path><path d="M10.6 14.8V19"></path><path d="M8.4 19h4.4"></path><path d="M6.4 21.2h8.4"></path><path d="M18.6 12.6v2.1"></path><circle cx="18.6" cy="16" r="0.9"></circle></svg>
+      </button>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer id="pf-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#pf-work">Work</a>
+        <a href="#pf-about">About</a>
+        <a href="#pf-services">Services</a>
+        <a href="https://www.instagram.com/moldovamaria/" target="_blank" rel="noopener" aria-label="Instagram (opens in new tab)">Instagram</a>
+        <a href="https://www.linkedin.com/in/mcs13/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in new tab)">LinkedIn</a>
+      </nav>
+      <div class="footer-end">
+        <span>© 2026 Maria S</span>
+        <button type="button" class="to-top" id="pf-to-top" aria-label="Back to top" title="Back to top">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Shared corner flourish for the envelope (drawn once, reused four times) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flourish" viewBox="0 0 60 60">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 44 L5 16 C5 9 9 5 16 5 L44 5"/><path d="M12 44 L12 18 C12 13 14 11 18 12 L44 12"/><path d="M16 5 C24 3 27 11 21 15 C18 17 13 15 14 10"/></g>
+  </symbol>
+</svg>
+</body>
+</html>

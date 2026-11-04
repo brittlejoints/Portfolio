@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Books &amp; illustration · Maria Sweeney</title>
+  <meta name="description" content="Watercolour and digital illustration for published books: the graphic memoir Brittle Joints and the Scooter Twins picture books.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='%23F5EFE6'/%3E%3Ctext x='100' y='136' font-family='serif' font-size='120' fill='%23C1521E' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/books.css">
+  <script src="js/books.js" defer></script>
+</head>
+<body>
+<div id="bk">
+  <a class="skip-link" href="#bk-main">Skip to content</a>
+
+  <header class="bk-header">
+    <a class="bk-home" href="index.html#pf-hero" aria-label="Maria, home"><img class="bk-mark" src="assets/img/maria-script.png" alt="Maria" width="150" height="15"></a>
+    <nav class="bk-links" aria-label="Primary">
+      <a href="index.html#pf-work">Work</a>
+      <a href="#bk-top" aria-current="page">Books</a>
+      <a href="index.html#pf-about">About</a>
+      <a class="btn-accent btn-nav press" href="index.html#pf-contact">Say hello</a>
+    </nav>
+    <!-- Mobile menu: <details> opens and closes with no JavaScript at all -->
+    <details class="bk-menu">
+      <summary aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path class="bar-top" d="M4 7h16"></path>
+          <path class="bar-bot" d="M4 17h16"></path>
+        </svg>
+      </summary>
+      <nav class="bk-menu-panel" aria-label="Mobile">
+        <a href="index.html#pf-work">Work</a>
+        <a href="#bk-top" aria-current="page">Books</a>
+        <a href="index.html#pf-about">About</a>
+        <a class="menu-cta press" href="index.html#pf-contact">Say hello</a>
+      </nav>
+    </details>
+  </header>
+
+  <main id="bk-main" tabindex="-1">
+    <section id="bk-top" class="bk-intro">
+      <h1>Books &amp; illustration</h1>
+      <p>Watercolour and digital illustration for published books: a graphic memoir of my own, and picture books about kids who move through the world on wheels.</p>
+    </section>
+
+    <section class="bk-band">
+      <div class="bk-tabs" role="tablist" aria-label="Books">
+        <button type="button" role="tab" class="bk-tab press" id="bk-tab-0" aria-controls="bk-panel-0" aria-selected="true" tabindex="0">Brittle Joints</button>
+        <button type="button" role="tab" class="bk-tab press" id="bk-tab-1" aria-controls="bk-panel-1" aria-selected="false" tabindex="-1">The Scooter Twins</button>
+        <button type="button" role="tab" class="bk-tab press" id="bk-tab-2" aria-controls="bk-panel-2" aria-selected="false" tabindex="-1">Melanie &amp; the Wheelie Friends</button>
+      </div>
+    </section>
+
+    <!-- ============ Brittle Joints: the flipbook ============ -->
+    <section class="bk-panel" role="tabpanel" id="bk-panel-0" aria-labelledby="bk-tab-0">
+      <div class="flip">
+        <div class="sb-stage" data-stage>
+          <button type="button" class="sb-arrow" data-arrow="prev" aria-label="Previous page">
+            <svg viewBox="0 0 14 44" width="14" height="44" fill="none" aria-hidden="true"><polyline points="11,3 3,22 11,41" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+          </button>
+          <div class="sb-3d" data-3d>
+            <div class="sb-tilt">
+              <div class="sb-book" data-book></div>
+              <div class="sb-cast ambient" aria-hidden="true"></div>
+              <div class="sb-cast contact" aria-hidden="true"></div>
+              <div class="sb-cast hair" aria-hidden="true"></div>
+            </div>
+          </div>
+          <button type="button" class="sb-arrow" data-arrow="next" aria-label="Next page">
+            <svg viewBox="0 0 14 44" width="14" height="44" fill="none" aria-hidden="true"><polyline points="3,3 11,22 3,41" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+          </button>
+        </div>
+
+        <div class="sb-captions" data-captions></div>
+        <span class="sr-only" data-live role="status"></span>
+
+        <div class="view-controls" role="group" aria-label="View controls">
+          <button type="button" data-tool="out" aria-label="Zoom out">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="8.6" cy="8.6" r="5.6"></circle><path d="M12.8 12.8 17.4 17.4M6.2 8.6h4.8"></path></svg>
+          </button>
+          <span data-zread aria-live="polite">100%</span>
+          <button type="button" data-tool="in" aria-label="Zoom in">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="8.6" cy="8.6" r="5.6"></circle><path d="M12.8 12.8 17.4 17.4M6.2 8.6h4.8M8.6 6.2v4.8"></path></svg>
+          </button>
+        </div>
+
+        <p class="flip-hint" data-hint>Drag the page to turn</p>
+      </div>
+
+      <div class="bk-facts-wrap">
+        <div class="bk-facts">
+          <h2>Brittle Joints</h2>
+          <p class="bk-desc">An evocative graphic memoir documenting my real-life experience navigating chronic pain, inaccessible spaces, and the healthcare system while living with Bruck syndrome.</p>
+          <dl>
+            <dt>Role</dt><dd>Author &amp; illustrator</dd>
+            <dt>Medium</dt><dd>Watercolour and digital</dd>
+            <dt>Publisher</dt><dd>Street Noise Books, June 2024</dd>
+          </dl>
+          <ul class="bk-awards">
+            <li>2025 Eisner Award nominee, Best Writer/Artist</li>
+            <li>New York Public Library Top 10 Graphic Novel of 2024</li>
+            <li>Starred reviews</li>
+          </ul>
+          <div class="bk-buy">
+            <a class="btn-accent press" href="https://www.streetnoisebooks.com/brittle-joints" target="_blank" rel="noopener" aria-label="Brittle Joints at the publisher (opens in new tab)">Publisher</a>
+            <a class="btn-line press" href="https://bookshop.org/p/books/brittle-joints/19682523?ean=9781951491260" target="_blank" rel="noopener" aria-label="Brittle Joints on Bookshop.org (opens in new tab)">Bookshop.org</a>
+            <a class="btn-line press" href="https://www.amazon.com/Brittle-Joints-Maria-Sweeney/dp/1951491262" target="_blank" rel="noopener" aria-label="Brittle Joints on Amazon (opens in new tab)">Amazon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ The Scooter Twins ============ -->
+    <section class="bk-panel" role="tabpanel" id="bk-panel-1" aria-labelledby="bk-tab-1" hidden>
+      <div class="bk-grid">
+        <div>
+          <img class="bk-feature" loading="lazy" decoding="async" src="assets/img/books/scooter-twins-spread.jpg" width="2000" height="1762" alt="The Scooter Twins interior spread: a construction crew works outside a bakery while a girl watches from a balcony">
+          <p class="bk-label">Interior spread · watercolour and digital</p>
+          <div class="bk-thumbs">
+            <img loading="lazy" decoding="async" src="assets/img/books/scooter-twins-cover.jpg" alt="The Scooter Twins cover: two kids face to face, with two mobility scooters in the field behind them">
+          </div>
+        </div>
+        <div class="bk-facts bk-facts--sticky">
+          <h2>The Scooter Twins</h2>
+          <p class="bk-series">The Scooter Twins series · Book one</p>
+          <p class="bk-desc">Written by disability advocate and mobility scooter user Dorothy Ellen Palmer, and illustrated by Maria Sweeney, The Scooter Twins is a story that shares the joys and challenges of disabled childhood, and offers many kids who get new wheels the opportunity to find themselves in the pages of a book.</p>
+          <dl>
+            <dt>Role</dt><dd>Illustrator · words by Dorothy Ellen Palmer</dd>
+            <dt>Medium</dt><dd>Watercolour and digital</dd>
+            <dt>Publisher</dt><dd>Groundwood Books, 2023</dd>
+          </dl>
+          <ul class="bk-awards"><li>Hamilton Literary Awards, 2025</li></ul>
+          <div class="bk-buy">
+            <a class="btn-accent press" href="https://houseofanansi.com/products/the-scooter-twins" target="_blank" rel="noopener" aria-label="The Scooter Twins at the publisher (opens in new tab)">Publisher</a>
+            <a class="btn-line press" href="https://bookshop.org/p/books/the-scooter-twins-dorothy-ellen-palmer/3438ce8eff1d4a6e?ean=9781773066295&amp;affiliate=126994" target="_blank" rel="noopener" aria-label="The Scooter Twins on Bookshop.org (opens in new tab)">Bookshop.org</a>
+            <a class="btn-line press" href="https://www.amazon.com/Scooter-Twins-Dorothy-Ellen-Palmer/dp/1773066293" target="_blank" rel="noopener" aria-label="The Scooter Twins on Amazon (opens in new tab)">Amazon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Melanie and the Wheelie Friends ============ -->
+    <section class="bk-panel" role="tabpanel" id="bk-panel-2" aria-labelledby="bk-tab-2" hidden>
+      <div class="bk-grid">
+        <div class="bk-cover-col">
+          <img class="bk-feature bk-feature--cover" loading="lazy" decoding="async" src="assets/img/books/wheelie-friends-cover.jpg" width="1024" height="924" alt="Melanie and the Wheelie Friends Save the Day, cover: five kids on mobility scooters">
+          <span class="bk-badge">Forthcoming 2026</span>
+          <p class="bk-label">Cover · watercolour and digital</p>
+        </div>
+        <div class="bk-facts">
+          <h2>Melanie and the Wheelie Friends Save the Day</h2>
+          <p class="bk-series">The Scooter Twins series · Book two</p>
+          <p class="bk-desc">The second book in the series, out in 2026. A first look at the interior spreads.</p>
+          <dl>
+            <dt>Role</dt><dd>Illustrator · words by Dorothy Ellen Palmer</dd>
+            <dt>Medium</dt><dd>Watercolour and digital</dd>
+            <dt>Publisher</dt><dd>Groundwood Books, 2026</dd>
+          </dl>
+          <div class="bk-buy">
+            <a class="btn-accent press" href="https://bookshop.org/p/books/melanie-and-the-wheelie-friends-save-the-day-dorothy-ellen-palmer/752ba6d6d29be8a1?ean=9781779460578&amp;affiliate=126994" target="_blank" rel="noopener" aria-label="Melanie and the Wheelie Friends on Bookshop.org (opens in new tab)">Bookshop.org</a>
+            <a class="btn-line press" href="https://www.amazon.com/s?k=9781779460578" target="_blank" rel="noopener" aria-label="Melanie and the Wheelie Friends on Amazon (opens in new tab)">Amazon</a>
+            <a class="btn-line press" href="https://www.amazon.com/dp/B0GKB4HXGK" target="_blank" rel="noopener" aria-label="Melanie and the Wheelie Friends on Kindle (opens in new tab)">Kindle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bk-other">
+      <h2>Other illustration &amp; painting</h2>
+      <p>Commissions and personal work outside the books.</p>
+      <div class="bk-gallery">
+        <figure><img loading="lazy" decoding="async" src="assets/img/books/painted-cards.jpg" alt="Two small painted cards of flowers and fruit, held up against houseplants"></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/img/polaroids/watercolour.jpg" alt="An open sketchbook of watercolour studies: fruit, a jar and a basket of flowers"></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/img/polaroids/desk.jpg" alt="A botanical painting on the desk beside glasses and a tin of pressed flowers"></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bk-footer">
+    <p>Interested in a book project?</p>
+    <a class="btn-accent btn-big press" href="index.html#pf-contact">Get in touch</a>
+  </footer>
+</div>
+</body>
+</html>
