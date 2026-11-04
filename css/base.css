@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Base styles shared by every page
+   1. Maria Design System element defaults (copied as-is)
+   2. Site-wide additions: the portfolio's type voices, focus ring,
+      skip link and the screen-reader-only helper.
+   ========================================================================== */
+
+/* ---- 1. Design system defaults --------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Headings: Caprasimo carries display moments, editorial serif ---- */
+/* carries the smaller heading roles. Caprasimo is the only display face —
+   never swap it for a condensed or geometric alternative. */
+h1 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-normal);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+  font-size: var(--text-3xl);
+}
+h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--text-strong);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p { margin: 0 0 var(--space-4); max-width: var(--content-measure); text-wrap: pretty; }
+
+/* --- Links ---------------------------------------------------------- */
+a { color: var(--text-link); text-decoration: underline; text-underline-offset: 0.15em; text-decoration-thickness: 1px; transition: color var(--dur-fast) var(--ease-standard); }
+a:hover { color: var(--text-link-hover); }
+
+strong, b { font-weight: var(--fw-semibold); color: var(--text-strong); }
+
+::selection { background: var(--mimosa); color: var(--espresso); }
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--shape-xs);
+}
+
+/* --- Utility type roles --------------------------------------------- */
+.eyebrow {
+  font-family: var(--font-brand);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--brand-primary);
+}
+.wordmark { font-family: var(--font-script); font-weight: 400; color: var(--text-strong); line-height: 1; }
+.display { font-family: var(--font-display); color: var(--text-strong); line-height: 1; }
+.groovy { font-family: var(--font-display); color: var(--text-strong); line-height: 1; } /* deprecated: use .display */
+.brand-heading { font-family: var(--font-brand); font-weight: var(--fw-bold); letter-spacing: var(--ls-tight); color: var(--text-strong); }
+.editorial { font-family: var(--font-serif); }
+.mono { font-family: var(--font-mono); }
+
+/* --- Soft shapes: circles & blobs, used as decoration and image masks - */
+/* Keep them roomy — these read as soft only with air around them, never  */
+/* crowd a blob against another element or piece of text.                */
+.shape-circle { border-radius: 50%; }
+.blob-1 { border-radius: 63% 37% 54% 46% / 43% 41% 59% 57%; }
+.blob-2 { border-radius: 42% 58% 68% 32% / 47% 44% 56% 53%; }
+.blob-3 { border-radius: 34% 66% 55% 45% / 60% 43% 57% 40%; }
+
+/* --- Washed photography: warm wash overlay + rounded edges ------------- */
+/* Wrap any <img> or background photo: <div class="washed"><img …></div>  */
+.washed { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--sand); }
+.washed > img, .washed > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.washed::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(160deg,
+      color-mix(in oklch, var(--cream) 45%, transparent) 0%,
+      color-mix(in oklch, var(--aperol) 10%, transparent) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.washed--blob { border-radius: 0; clip-path: none; }
+.washed--blob.blob-1, .washed--blob.blob-2, .washed--blob.blob-3 { overflow: hidden; }
+
+/* ---- 2. Site-wide additions ------------------------------------------ */
+
+/* Kaftan is the display serif. It is a trial licence: buy the full
+   licence before launch, or swap the file (see README). */
+@font-face {
+  font-family: 'Kaftan Serif';
+  src: url('../assets/fonts/kaftan-trial.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* The portfolio overrides the design system's type voices:
+   Kaftan for display, Archivo for everything else. */
+:root {
+  --font-display: 'Kaftan Serif', 'Marcellus', 'Poppins', serif;
+  --font-brand: 'Archivo', 'Space Grotesk', sans-serif;
+  --font-sans: 'Archivo', 'Public Sans', sans-serif;
+  --font-heading: 'Archivo', 'Space Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  /* Polaroid captions use the handwritten face from the Typekit kit */
+  --font-hand: 'beth-ellen', var(--font-script), cursive;
+
+  /* Motion curves (Emil Kowalski's set, see project CLAUDE.md) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+html, body { margin: 0; }
+
+:focus-visible { outline: 2px solid var(--aperol, #C1521E); outline-offset: 3px; }
+:focus:not(:focus-visible) { outline: none; }
+
+/* Visible only when tabbed to: lets keyboard users jump past the nav */
+.skip-link {
+  position: fixed; left: 16px; top: 16px; z-index: 10000;
+  padding: 12px 22px; border-radius: 999px;
+  background: var(--page-ink, var(--espresso)); color: var(--page-surface, var(--cream));
+  font-family: var(--font-brand); font-weight: 600; font-size: 14px; text-decoration: none;
+  transform: translateY(-220%);
+  transition: transform .2s var(--ease-out);
+}
+.skip-link:focus { transform: translateY(0); color: var(--page-surface, var(--cream)); }
+
+/* Hidden visually, still read by screen readers */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* Pressable things shrink slightly when pressed */
+.press:active { transform: scale(0.97); }
+
+/* Main landmark receives focus from the skip link; no ring needed there */
+main:focus { outline: none; }
